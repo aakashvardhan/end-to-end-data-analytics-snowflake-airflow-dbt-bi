@@ -1,0 +1,43 @@
+[2025-11-25T00:33:50.616+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-25T00:33:50.635+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2023-04-05T18:00:00+00:00 [queued]>
+[2025-11-25T00:33:50.642+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2023-04-05T18:00:00+00:00 [queued]>
+[2025-11-25T00:33:50.643+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-11-25T00:33:50.669+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): extract> on 2023-04-05 18:00:00+00:00
+[2025-11-25T00:33:50.681+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=65160) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-25T00:33:50.685+0000] {standard_task_runner.py:72} INFO - Started process 65205 to run task
+[2025-11-25T00:33:50.684+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'yfinance_to_snowflake_etl', 'extract', 'scheduled__2023-04-05T18:00:00+00:00', '--job-id', '2558', '--raw', '--subdir', 'DAGS_FOLDER/yfinance_to_snowflake_etl.py', '--cfg-path', '/tmp/tmpko4lr6q3']
+[2025-11-25T00:33:50.687+0000] {standard_task_runner.py:105} INFO - Job 2558: Subtask extract
+[2025-11-25T00:33:50.744+0000] {task_command.py:467} INFO - Running <TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2023-04-05T18:00:00+00:00 [running]> on host fd57ff944215
+[2025-11-25T00:33:50.798+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='yfinance_to_snowflake_etl' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-04-05T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-04-05T18:00:00+00:00'
+[2025-11-25T00:33:50.800+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-25T00:33:50.804+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:48 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:33:51.521+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:33:51.522+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:33:51.522+0000] {multi.py:198} ERROR - ['AAPL']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-25T00:33:51.525+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol AAPL. Retrying in 2.0 seconds...
+[2025-11-25T00:33:53.526+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:48 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:33:53.908+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:33:53.908+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:33:53.908+0000] {multi.py:198} ERROR - ['AAPL']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-25T00:33:53.910+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for AAPL.
+[2025-11-25T00:33:53.910+0000] {logging_mixin.py:190} INFO - No data returned for AAPL
+[2025-11-25T00:33:53.911+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:48 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:33:54.284+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:33:54.284+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:33:54.285+0000] {multi.py:198} ERROR - ['TSLA']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-25T00:33:54.286+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol TSLA. Retrying in 2.0 seconds...
+[2025-11-25T00:33:56.289+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:48 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:33:56.541+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:33:56.542+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:33:56.542+0000] {multi.py:198} ERROR - ['TSLA']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-25T00:33:56.543+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for TSLA.
+[2025-11-25T00:33:56.543+0000] {logging_mixin.py:190} INFO - No data returned for TSLA
+[2025-11-25T00:33:56.543+0000] {python.py:240} INFO - Done. Returned value was: []
+[2025-11-25T00:33:56.553+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-25T00:33:56.553+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=yfinance_to_snowflake_etl, task_id=extract, run_id=scheduled__2023-04-05T18:00:00+00:00, execution_date=20230405T180000, start_date=20251125T003350, end_date=20251125T003356
+[2025-11-25T00:33:56.620+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-25T00:33:56.664+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,65 @@
+[2025-11-25T02:37:49.911+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-25T02:37:49.917+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_debug manual__2025-11-25T02:37:37+00:00 [queued]>
+[2025-11-25T02:37:49.920+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_debug manual__2025-11-25T02:37:37+00:00 [queued]>
+[2025-11-25T02:37:49.920+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-11-25T02:37:49.924+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_transformations.dbt_debug> on 2025-11-25 02:37:37+00:00
+[2025-11-25T02:37:49.928+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'stock_elt_with_dbt', 'dbt_transformations.dbt_debug', 'manual__2025-11-25T02:37:37+00:00', '--job-id', '4798', '--raw', '--subdir', 'DAGS_FOLDER/stock_elt_with_dbt.py', '--cfg-path', '/tmp/tmpxp2d65rt']
+[2025-11-25T02:37:49.929+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=377) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-25T02:37:49.929+0000] {standard_task_runner.py:105} INFO - Job 4798: Subtask dbt_transformations.dbt_debug
+[2025-11-25T02:37:49.930+0000] {standard_task_runner.py:72} INFO - Started process 386 to run task
+[2025-11-25T02:37:49.945+0000] {task_command.py:467} INFO - Running <TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_debug manual__2025-11-25T02:37:37+00:00 [running]> on host a4b8d4f4105c
+[2025-11-25T02:37:49.968+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_elt_with_dbt' AIRFLOW_CTX_TASK_ID='dbt_transformations.dbt_debug' AIRFLOW_CTX_EXECUTION_DATE='2025-11-25T02:37:37+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-25T02:37:37+00:00'
+[2025-11-25T02:37:49.969+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-25T02:37:49.970+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-25T02:37:49.970+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/stock_analytics && dbt debug --profiles-dir .']
+[2025-11-25T02:37:49.974+0000] {subprocess.py:86} INFO - Output:
+[2025-11-25T02:37:51.027+0000] {subprocess.py:93} INFO - [0m02:37:51  Running with dbt=1.7.0
+[2025-11-25T02:37:51.028+0000] {subprocess.py:93} INFO - [0m02:37:51  dbt version: 1.7.0
+[2025-11-25T02:37:51.028+0000] {subprocess.py:93} INFO - [0m02:37:51  python version: 3.12.5
+[2025-11-25T02:37:51.028+0000] {subprocess.py:93} INFO - [0m02:37:51  python path: /home/***/.local/bin/python
+[2025-11-25T02:37:51.029+0000] {subprocess.py:93} INFO - [0m02:37:51  os info: Linux-6.10.14-linuxkit-aarch64-with-glibc2.36
+[2025-11-25T02:37:51.278+0000] {subprocess.py:93} INFO - [0m02:37:51  Using profiles dir at .
+[2025-11-25T02:37:51.279+0000] {subprocess.py:93} INFO - [0m02:37:51  Using profiles.yml file at ./profiles.yml
+[2025-11-25T02:37:51.279+0000] {subprocess.py:93} INFO - [0m02:37:51  Using dbt_project.yml file at /opt/***/stock_analytics/dbt_project.yml
+[2025-11-25T02:37:51.279+0000] {subprocess.py:93} INFO - [0m02:37:51  adapter type: snowflake
+[2025-11-25T02:37:51.279+0000] {subprocess.py:93} INFO - [0m02:37:51  adapter version: 1.7.0
+[2025-11-25T02:37:51.302+0000] {subprocess.py:93} INFO - [0m02:37:51  Configuration:
+[2025-11-25T02:37:51.303+0000] {subprocess.py:93} INFO - [0m02:37:51    profiles.yml file [[32mOK found and valid[0m]
+[2025-11-25T02:37:51.303+0000] {subprocess.py:93} INFO - [0m02:37:51    dbt_project.yml file [[32mOK found and valid[0m]
+[2025-11-25T02:37:51.303+0000] {subprocess.py:93} INFO - [0m02:37:51  Required dependencies:
+[2025-11-25T02:37:51.305+0000] {subprocess.py:93} INFO - [0m02:37:51   - git [[32mOK found[0m]
+[2025-11-25T02:37:51.305+0000] {subprocess.py:93} INFO - 
+[2025-11-25T02:37:51.305+0000] {subprocess.py:93} INFO - [0m02:37:51  Connection:
+[2025-11-25T02:37:51.305+0000] {subprocess.py:93} INFO - [0m02:37:51    account: lvb17920
+[2025-11-25T02:37:51.306+0000] {subprocess.py:93} INFO - [0m02:37:51    user: CHIPMUNK
+[2025-11-25T02:37:51.306+0000] {subprocess.py:93} INFO - [0m02:37:51    database: TRAINING_DB
+[2025-11-25T02:37:51.306+0000] {subprocess.py:93} INFO - [0m02:37:51    warehouse: XSMALL_WH
+[2025-11-25T02:37:51.306+0000] {subprocess.py:93} INFO - [0m02:37:51    role: TRAINING_ROLE
+[2025-11-25T02:37:51.306+0000] {subprocess.py:93} INFO - [0m02:37:51    schema: raw
+[2025-11-25T02:37:51.307+0000] {subprocess.py:93} INFO - [0m02:37:51    authenticator: None
+[2025-11-25T02:37:51.307+0000] {subprocess.py:93} INFO - [0m02:37:51    private_key_path: None
+[2025-11-25T02:37:51.307+0000] {subprocess.py:93} INFO - [0m02:37:51    token: None
+[2025-11-25T02:37:51.307+0000] {subprocess.py:93} INFO - [0m02:37:51    oauth_client_id: None
+[2025-11-25T02:37:51.308+0000] {subprocess.py:93} INFO - [0m02:37:51    query_tag: None
+[2025-11-25T02:37:51.308+0000] {subprocess.py:93} INFO - [0m02:37:51    client_session_keep_alive: False
+[2025-11-25T02:37:51.308+0000] {subprocess.py:93} INFO - [0m02:37:51    host: None
+[2025-11-25T02:37:51.308+0000] {subprocess.py:93} INFO - [0m02:37:51    port: None
+[2025-11-25T02:37:51.308+0000] {subprocess.py:93} INFO - [0m02:37:51    proxy_host: None
+[2025-11-25T02:37:51.309+0000] {subprocess.py:93} INFO - [0m02:37:51    proxy_port: None
+[2025-11-25T02:37:51.309+0000] {subprocess.py:93} INFO - [0m02:37:51    protocol: None
+[2025-11-25T02:37:51.309+0000] {subprocess.py:93} INFO - [0m02:37:51    connect_retries: 1
+[2025-11-25T02:37:51.309+0000] {subprocess.py:93} INFO - [0m02:37:51    connect_timeout: None
+[2025-11-25T02:37:51.310+0000] {subprocess.py:93} INFO - [0m02:37:51    retry_on_database_errors: False
+[2025-11-25T02:37:51.310+0000] {subprocess.py:93} INFO - [0m02:37:51    retry_all: False
+[2025-11-25T02:37:51.310+0000] {subprocess.py:93} INFO - [0m02:37:51    insecure_mode: False
+[2025-11-25T02:37:51.310+0000] {subprocess.py:93} INFO - [0m02:37:51    reuse_connections: None
+[2025-11-25T02:37:51.310+0000] {subprocess.py:93} INFO - [0m02:37:51  Registered adapter: snowflake=1.7.0
+[2025-11-25T02:37:52.984+0000] {subprocess.py:93} INFO - [0m02:37:52    Connection test: [[32mOK connection ok[0m]
+[2025-11-25T02:37:52.985+0000] {subprocess.py:93} INFO - 
+[2025-11-25T02:37:52.986+0000] {subprocess.py:93} INFO - [0m02:37:52  [32mAll checks passed![0m
+[2025-11-25T02:37:53.534+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-25T02:37:53.544+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-25T02:37:53.544+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=stock_elt_with_dbt, task_id=dbt_transformations.dbt_debug, run_id=manual__2025-11-25T02:37:37+00:00, execution_date=20251125T023737, start_date=20251125T023749, end_date=20251125T023753
+[2025-11-25T02:37:53.593+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-25T02:37:53.603+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-25T02:37:53.604+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,209 @@
+[2025-11-25T00:21:17.926+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-25T00:21:17.933+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2022-04-27T18:00:00+00:00 [queued]>
+[2025-11-25T00:21:17.935+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2022-04-27T18:00:00+00:00 [queued]>
+[2025-11-25T00:21:17.935+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-11-25T00:21:17.939+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): extract> on 2022-04-27 18:00:00+00:00
+[2025-11-25T00:21:17.943+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=51956) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-25T00:21:17.943+0000] {standard_task_runner.py:72} INFO - Started process 52007 to run task
+[2025-11-25T00:21:17.943+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'yfinance_to_snowflake_etl', 'extract', 'scheduled__2022-04-27T18:00:00+00:00', '--job-id', '1798', '--raw', '--subdir', 'DAGS_FOLDER/yfinance_to_snowflake_etl.py', '--cfg-path', '/tmp/tmp7uvzak64']
+[2025-11-25T00:21:17.944+0000] {standard_task_runner.py:105} INFO - Job 1798: Subtask extract
+[2025-11-25T00:21:17.963+0000] {task_command.py:467} INFO - Running <TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2022-04-27T18:00:00+00:00 [running]> on host fd57ff944215
+[2025-11-25T00:21:17.994+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='yfinance_to_snowflake_etl' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2022-04-27T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-04-27T18:00:00+00:00'
+[2025-11-25T00:21:17.994+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-25T00:21:17.996+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:18.140+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:18.140+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:18.142+0000] {multi.py:198} ERROR - ['[']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:18.145+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol [. Retrying in 2.0 seconds...
+[2025-11-25T00:21:20.149+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:20.330+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:20.330+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:20.330+0000] {multi.py:198} ERROR - ['[']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:20.332+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for [.
+[2025-11-25T00:21:20.332+0000] {logging_mixin.py:190} INFO - Error processing symbol [: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:20.333+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:20.638+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:20.639+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:20.639+0000] {multi.py:198} ERROR - ['"']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:20.641+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ". Retrying in 2.0 seconds...
+[2025-11-25T00:21:22.643+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:22.800+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:22.800+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:22.800+0000] {multi.py:198} ERROR - ['"']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:22.801+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ".
+[2025-11-25T00:21:22.801+0000] {logging_mixin.py:190} INFO - Error processing symbol ": 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:22.802+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:23.013+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:23.013+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:23.014+0000] {multi.py:198} ERROR - ['A']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:23.015+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol A. Retrying in 2.0 seconds...
+[2025-11-25T00:21:25.016+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:25.130+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:25.131+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:25.131+0000] {multi.py:198} ERROR - ['A']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:25.132+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for A.
+[2025-11-25T00:21:25.132+0000] {logging_mixin.py:190} INFO - Error processing symbol A: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:25.132+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:25.266+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:25.266+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:25.267+0000] {multi.py:198} ERROR - ['A']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:25.267+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol A. Retrying in 2.0 seconds...
+[2025-11-25T00:21:27.270+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:28.468+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:28.468+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:28.469+0000] {multi.py:198} ERROR - ['A']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:28.470+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for A.
+[2025-11-25T00:21:28.470+0000] {logging_mixin.py:190} INFO - Error processing symbol A: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:28.471+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:28.612+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:28.613+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:28.613+0000] {multi.py:198} ERROR - ['P']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:28.614+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol P. Retrying in 2.0 seconds...
+[2025-11-25T00:21:30.616+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:30.785+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:30.786+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:30.786+0000] {multi.py:198} ERROR - ['P']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:30.787+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for P.
+[2025-11-25T00:21:30.788+0000] {logging_mixin.py:190} INFO - Error processing symbol P: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:30.788+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:30.941+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:30.942+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:30.942+0000] {multi.py:198} ERROR - ['L']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:30.944+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol L. Retrying in 2.0 seconds...
+[2025-11-25T00:21:32.951+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:33.097+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:33.098+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:33.098+0000] {multi.py:198} ERROR - ['L']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:33.099+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for L.
+[2025-11-25T00:21:33.099+0000] {logging_mixin.py:190} INFO - Error processing symbol L: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:33.100+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:33.251+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:33.251+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:33.252+0000] {multi.py:198} ERROR - ['"']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:33.253+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ". Retrying in 2.0 seconds...
+[2025-11-25T00:21:35.256+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:35.505+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:35.506+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:35.506+0000] {multi.py:198} ERROR - ['"']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:35.509+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ".
+[2025-11-25T00:21:35.509+0000] {logging_mixin.py:190} INFO - Error processing symbol ": 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:35.510+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:35.511+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  0 of 0 completed
+[2025-11-25T00:21:35.511+0000] {logging_mixin.py:190} INFO - Error: No objects to concatenate. Retrying in 2.0 seconds...
+[2025-11-25T00:21:37.514+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  0 of 0 completed
+[2025-11-25T00:21:37.515+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ,.
+[2025-11-25T00:21:37.516+0000] {logging_mixin.py:190} INFO - Error processing symbol ,: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:37.516+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  0 of 0 completed
+[2025-11-25T00:21:37.517+0000] {logging_mixin.py:190} INFO - Error: No objects to concatenate. Retrying in 2.0 seconds...
+[2025-11-25T00:21:39.519+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  0 of 0 completed
+[2025-11-25T00:21:39.521+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for  .
+[2025-11-25T00:21:39.521+0000] {logging_mixin.py:190} INFO - Error processing symbol  : 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:39.728+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:39.729+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:39.729+0000] {multi.py:198} ERROR - ['"']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:39.732+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ". Retrying in 2.0 seconds...
+[2025-11-25T00:21:41.737+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:41.879+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:41.880+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:41.881+0000] {multi.py:198} ERROR - ['"']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:41.883+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ".
+[2025-11-25T00:21:41.884+0000] {logging_mixin.py:190} INFO - Error processing symbol ": 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:41.885+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:42.098+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:42.098+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:42.099+0000] {multi.py:198} ERROR - ['T']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:42.100+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol T. Retrying in 2.0 seconds...
+[2025-11-25T00:21:44.108+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:44.242+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:44.244+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:44.245+0000] {multi.py:198} ERROR - ['T']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:44.248+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for T.
+[2025-11-25T00:21:44.249+0000] {logging_mixin.py:190} INFO - Error processing symbol T: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:44.250+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:44.470+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:44.470+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:44.470+0000] {multi.py:198} ERROR - ['S']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:44.472+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol S. Retrying in 2.0 seconds...
+[2025-11-25T00:21:46.475+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:46.664+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:46.664+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:46.665+0000] {multi.py:198} ERROR - ['S']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:46.667+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for S.
+[2025-11-25T00:21:46.667+0000] {logging_mixin.py:190} INFO - Error processing symbol S: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:46.668+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:46.824+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:46.824+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:46.825+0000] {multi.py:198} ERROR - ['L']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:46.828+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol L. Retrying in 2.0 seconds...
+[2025-11-25T00:21:48.829+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:48.971+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:48.971+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:48.971+0000] {multi.py:198} ERROR - ['L']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:48.972+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for L.
+[2025-11-25T00:21:48.972+0000] {logging_mixin.py:190} INFO - Error processing symbol L: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:48.973+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:49.165+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:49.165+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:49.165+0000] {multi.py:198} ERROR - ['A']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:49.166+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol A. Retrying in 2.0 seconds...
+[2025-11-25T00:21:51.168+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:51.292+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:51.292+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:51.292+0000] {multi.py:198} ERROR - ['A']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:51.294+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for A.
+[2025-11-25T00:21:51.294+0000] {logging_mixin.py:190} INFO - Error processing symbol A: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:51.294+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:51.489+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:51.489+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:51.489+0000] {multi.py:198} ERROR - ['"']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:51.490+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ". Retrying in 2.0 seconds...
+[2025-11-25T00:21:53.492+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:53.740+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:53.740+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:53.740+0000] {multi.py:198} ERROR - ['"']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:53.741+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ".
+[2025-11-25T00:21:53.742+0000] {logging_mixin.py:190} INFO - Error processing symbol ": 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:53.742+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:53.910+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:53.910+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:53.910+0000] {multi.py:198} ERROR - [']']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:53.911+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ]. Retrying in 2.0 seconds...
+[2025-11-25T00:21:55.912+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:21:56.134+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:21:56.134+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:21:56.134+0000] {multi.py:198} ERROR - [']']: YFRateLimitError('Too Many Requests. Rate limited. Try after a while.')
+[2025-11-25T00:21:56.135+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ].
+[2025-11-25T00:21:56.135+0000] {logging_mixin.py:190} INFO - Error processing symbol ]: 'NoneType' object has no attribute 'reset_index'
+[2025-11-25T00:21:56.135+0000] {python.py:240} INFO - Done. Returned value was: []
+[2025-11-25T00:21:56.145+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-25T00:21:56.145+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=yfinance_to_snowflake_etl, task_id=extract, run_id=scheduled__2022-04-27T18:00:00+00:00, execution_date=20220427T180000, start_date=20251125T002117, end_date=20251125T002156
+[2025-11-25T00:21:56.200+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-25T00:21:56.227+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

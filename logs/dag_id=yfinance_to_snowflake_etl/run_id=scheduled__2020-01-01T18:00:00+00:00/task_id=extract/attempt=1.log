@@ -1,0 +1,262 @@
+[2025-11-24T23:48:46.925+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-24T23:48:46.935+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2020-01-01T18:00:00+00:00 [queued]>
+[2025-11-24T23:48:46.939+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2020-01-01T18:00:00+00:00 [queued]>
+[2025-11-24T23:48:46.939+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-11-24T23:48:46.945+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): extract> on 2020-01-01 18:00:00+00:00
+[2025-11-24T23:48:46.951+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=690) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-24T23:48:46.951+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'yfinance_to_snowflake_etl', 'extract', 'scheduled__2020-01-01T18:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/yfinance_to_snowflake_etl.py', '--cfg-path', '/tmp/tmp0fmzi5hf']
+[2025-11-24T23:48:46.952+0000] {standard_task_runner.py:72} INFO - Started process 737 to run task
+[2025-11-24T23:48:46.952+0000] {standard_task_runner.py:105} INFO - Job 2: Subtask extract
+[2025-11-24T23:48:46.974+0000] {task_command.py:467} INFO - Running <TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2020-01-01T18:00:00+00:00 [running]> on host fd57ff944215
+[2025-11-24T23:48:47.010+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='yfinance_to_snowflake_etl' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2020-01-01T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2020-01-01T18:00:00+00:00'
+[2025-11-24T23:48:47.010+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-24T23:48:47.014+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:48:48.623+0000] {quote.py:592} ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ["}}}
+[2025-11-24T23:48:49.118+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:48:49.118+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:48:49.118+0000] {multi.py:198} ERROR - ['[']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:48:49.126+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol [. Retrying in 2.0 seconds...
+[2025-11-24T23:48:51.128+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:48:51.711+0000] {quote.py:592} ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ["}}}
+[2025-11-24T23:48:52.220+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:48:52.220+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:48:52.221+0000] {multi.py:198} ERROR - ['[']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:48:52.222+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for [.
+[2025-11-24T23:48:52.223+0000] {logging_mixin.py:190} INFO - Error processing symbol [: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:48:52.223+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:48:52.609+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:48:52.609+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:48:52.610+0000] {multi.py:198} ERROR - ['"']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:48:52.611+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ". Retrying in 2.0 seconds...
+[2025-11-24T23:48:54.614+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:48:54.857+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:48:54.857+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:48:54.857+0000] {multi.py:198} ERROR - ['"']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:48:54.859+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ".
+[2025-11-24T23:48:54.859+0000] {logging_mixin.py:190} INFO - Error processing symbol ": 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:48:54.859+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:48:55.144+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:48:55.145+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:48:55.145+0000] {multi.py:198} ERROR - ['A']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:48:55.146+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol A. Retrying in 2.0 seconds...
+[2025-11-24T23:48:57.149+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:48:57.534+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:48:57.534+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:48:57.534+0000] {multi.py:198} ERROR - ['A']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:48:57.535+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for A.
+[2025-11-24T23:48:57.535+0000] {logging_mixin.py:190} INFO - Error processing symbol A: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:48:57.536+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:48:57.767+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:48:57.768+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:48:57.768+0000] {multi.py:198} ERROR - ['A']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:48:57.769+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol A. Retrying in 2.0 seconds...
+[2025-11-24T23:48:59.770+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:00.136+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:00.137+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:00.137+0000] {multi.py:198} ERROR - ['A']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:00.139+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for A.
+[2025-11-24T23:49:00.140+0000] {logging_mixin.py:190} INFO - Error processing symbol A: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:00.140+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:00.392+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:00.392+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:00.392+0000] {multi.py:198} ERROR - ['P']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:00.393+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol P. Retrying in 2.0 seconds...
+[2025-11-24T23:49:02.394+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:02.682+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:02.682+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:02.682+0000] {multi.py:198} ERROR - ['P']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:02.683+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for P.
+[2025-11-24T23:49:02.683+0000] {logging_mixin.py:190} INFO - Error processing symbol P: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:02.683+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:03.175+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:03.176+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:03.176+0000] {multi.py:198} ERROR - ['L']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:03.177+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol L. Retrying in 2.0 seconds...
+[2025-11-24T23:49:05.183+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:05.406+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:05.408+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:05.408+0000] {multi.py:198} ERROR - ['L']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:05.410+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for L.
+[2025-11-24T23:49:05.410+0000] {logging_mixin.py:190} INFO - Error processing symbol L: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:05.411+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:05.609+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:05.609+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:05.610+0000] {multi.py:198} ERROR - ['"']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:05.611+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ". Retrying in 2.0 seconds...
+[2025-11-24T23:49:07.613+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:07.999+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:07.999+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:08.000+0000] {multi.py:198} ERROR - ['"']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:08.001+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ".
+[2025-11-24T23:49:08.001+0000] {logging_mixin.py:190} INFO - Error processing symbol ": 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:08.002+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:08.002+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  0 of 0 completed
+[2025-11-24T23:49:08.003+0000] {logging_mixin.py:190} INFO - Error: No objects to concatenate. Retrying in 2.0 seconds...
+[2025-11-24T23:49:10.007+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  0 of 0 completed
+[2025-11-24T23:49:10.008+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ,.
+[2025-11-24T23:49:10.009+0000] {logging_mixin.py:190} INFO - Error processing symbol ,: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:10.009+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  0 of 0 completed
+[2025-11-24T23:49:10.010+0000] {logging_mixin.py:190} INFO - Error: No objects to concatenate. Retrying in 2.0 seconds...
+[2025-11-24T23:49:12.012+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  0 of 0 completed
+[2025-11-24T23:49:12.013+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for  .
+[2025-11-24T23:49:12.013+0000] {logging_mixin.py:190} INFO - Error processing symbol  : 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:12.397+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:12.398+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:12.398+0000] {multi.py:198} ERROR - ['"']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:12.399+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ". Retrying in 2.0 seconds...
+[2025-11-24T23:49:14.400+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:14.804+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:14.804+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:14.804+0000] {multi.py:198} ERROR - ['"']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:14.805+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ".
+[2025-11-24T23:49:14.806+0000] {logging_mixin.py:190} INFO - Error processing symbol ": 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:14.806+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:15.442+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:15.443+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:15.443+0000] {multi.py:198} ERROR - ['T']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:15.445+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol T. Retrying in 2.0 seconds...
+[2025-11-24T23:49:17.447+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:17.723+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:17.724+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:17.724+0000] {multi.py:198} ERROR - ['T']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:17.725+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for T.
+[2025-11-24T23:49:17.725+0000] {logging_mixin.py:190} INFO - Error processing symbol T: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:17.726+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:18.055+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:18.055+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:18.055+0000] {multi.py:198} ERROR - ['S']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:18.056+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol S. Retrying in 2.0 seconds...
+[2025-11-24T23:49:20.057+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:20.366+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:20.366+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:20.366+0000] {multi.py:198} ERROR - ['S']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:20.368+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for S.
+[2025-11-24T23:49:20.368+0000] {logging_mixin.py:190} INFO - Error processing symbol S: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:20.368+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:20.720+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:20.720+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:20.721+0000] {multi.py:198} ERROR - ['L']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:20.722+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol L. Retrying in 2.0 seconds...
+[2025-11-24T23:49:22.723+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:23.108+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:23.108+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:23.108+0000] {multi.py:198} ERROR - ['L']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:23.109+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for L.
+[2025-11-24T23:49:23.109+0000] {logging_mixin.py:190} INFO - Error processing symbol L: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:23.110+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:23.431+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:23.431+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:23.431+0000] {multi.py:198} ERROR - ['A']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:23.433+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol A. Retrying in 2.0 seconds...
+[2025-11-24T23:49:25.435+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:26.089+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:26.089+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:26.089+0000] {multi.py:198} ERROR - ['A']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:26.090+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for A.
+[2025-11-24T23:49:26.090+0000] {logging_mixin.py:190} INFO - Error processing symbol A: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:26.091+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:26.577+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:26.577+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:26.577+0000] {multi.py:198} ERROR - ['"']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:26.579+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ". Retrying in 2.0 seconds...
+[2025-11-24T23:49:28.580+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:28.876+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:28.879+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:28.879+0000] {multi.py:198} ERROR - ['"']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:28.881+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ".
+[2025-11-24T23:49:28.881+0000] {logging_mixin.py:190} INFO - Error processing symbol ": 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:28.882+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:29.681+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:29.681+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:29.681+0000] {multi.py:198} ERROR - [']']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:29.682+0000] {logging_mixin.py:190} INFO - Error: No data available for symbol ]. Retrying in 2.0 seconds...
+[2025-11-24T23:49:31.683+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:47 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-24T23:49:32.213+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-24T23:49:32.215+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-24T23:49:32.215+0000] {multi.py:198} ERROR - [']']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-24T23:49:32.217+0000] {logging_mixin.py:190} INFO - Max retries reached. Unable to download stock data for ].
+[2025-11-24T23:49:32.218+0000] {logging_mixin.py:190} INFO - Error processing symbol ]: 'NoneType' object has no attribute 'reset_index'
+[2025-11-24T23:49:32.220+0000] {python.py:240} INFO - Done. Returned value was: []
+[2025-11-24T23:49:32.243+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-24T23:49:32.243+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=yfinance_to_snowflake_etl, task_id=extract, run_id=scheduled__2020-01-01T18:00:00+00:00, execution_date=20200101T180000, start_date=20251124T234846, end_date=20251124T234932
+[2025-11-24T23:49:32.281+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-24T23:49:32.290+0000] {taskinstance.py:3925} ERROR - Error scheduling downstream tasks. Skipping it as this is entirely optional optimisation. There might be various reasons for it, please take a look at the stack trace to figure out if the root cause can be diagnosed and fixed. See the issue https://github.com/apache/***/issues/39717 for details and an example problem. If you would like to get help in solving root cause, open discussion with all details with your managed service support or in Airflow repository.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3921, in schedule_downstream_tasks
+    return TaskInstance._schedule_downstream_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3870, in _schedule_downstream_tasks
+    partial_dag = task.dag.partial_subset(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dag.py", line 2664, in partial_subset
+    t.task_id: _deepcopy_task(t)
+               ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dag.py", line 2661, in _deepcopy_task
+    return copy.deepcopy(t, memo)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 143, in deepcopy
+    y = copier(memo)
+        ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 1388, in __deepcopy__
+    setattr(result, k, copy.deepcopy(v, memo))
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 221, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 201, in _deepcopy_tuple
+    y = [deepcopy(a, memo) for a in x]
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 162, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 259, in _reconstruct
+    state = deepcopy(state, memo)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 221, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 151, in deepcopy
+    rv = reductor(4)
+         ^^^^^^^^^^^
+TypeError: cannot pickle '_thread.lock' object
+[2025-11-24T23:49:32.292+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

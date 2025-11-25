@@ -1,0 +1,39 @@
+[2025-11-25T02:38:00.892+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-25T02:38:00.898+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_run_core manual__2025-11-25T02:37:37+00:00 [queued]>
+[2025-11-25T02:38:00.901+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_run_core manual__2025-11-25T02:37:37+00:00 [queued]>
+[2025-11-25T02:38:00.901+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-11-25T02:38:00.906+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_transformations.dbt_run_core> on 2025-11-25 02:37:37+00:00
+[2025-11-25T02:38:00.910+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'stock_elt_with_dbt', 'dbt_transformations.dbt_run_core', 'manual__2025-11-25T02:37:37+00:00', '--job-id', '4800', '--raw', '--subdir', 'DAGS_FOLDER/stock_elt_with_dbt.py', '--cfg-path', '/tmp/tmp8yafsr5a']
+[2025-11-25T02:38:00.911+0000] {standard_task_runner.py:105} INFO - Job 4800: Subtask dbt_transformations.dbt_run_core
+[2025-11-25T02:38:00.911+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=512) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-25T02:38:00.912+0000] {standard_task_runner.py:72} INFO - Started process 520 to run task
+[2025-11-25T02:38:00.927+0000] {task_command.py:467} INFO - Running <TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_run_core manual__2025-11-25T02:37:37+00:00 [running]> on host a4b8d4f4105c
+[2025-11-25T02:38:00.955+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_elt_with_dbt' AIRFLOW_CTX_TASK_ID='dbt_transformations.dbt_run_core' AIRFLOW_CTX_EXECUTION_DATE='2025-11-25T02:37:37+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-25T02:37:37+00:00'
+[2025-11-25T02:38:00.956+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-25T02:38:00.957+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-25T02:38:00.957+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/stock_analytics && dbt run --profiles-dir . --select output.core.*']
+[2025-11-25T02:38:00.961+0000] {subprocess.py:86} INFO - Output:
+[2025-11-25T02:38:01.972+0000] {subprocess.py:93} INFO - [0m02:38:01  Running with dbt=1.7.0
+[2025-11-25T02:38:02.293+0000] {subprocess.py:93} INFO - [0m02:38:02  Registered adapter: snowflake=1.7.0
+[2025-11-25T02:38:02.323+0000] {subprocess.py:93} INFO - [0m02:38:02  Found 6 models, 5 tests, 1 source, 0 exposures, 0 metrics, 469 macros, 0 groups, 0 semantic models
+[2025-11-25T02:38:02.324+0000] {subprocess.py:93} INFO - [0m02:38:02
+[2025-11-25T02:38:03.840+0000] {subprocess.py:93} INFO - [0m02:38:03  Concurrency: 4 threads (target='dev')
+[2025-11-25T02:38:03.841+0000] {subprocess.py:93} INFO - [0m02:38:03
+[2025-11-25T02:38:03.853+0000] {subprocess.py:93} INFO - [0m02:38:03  1 of 3 START sql table model raw_analytics.stock_moving_averages ............... [RUN]
+[2025-11-25T02:38:03.853+0000] {subprocess.py:93} INFO - [0m02:38:03  2 of 3 START sql table model raw_analytics.stock_rsi ........................... [RUN]
+[2025-11-25T02:38:05.246+0000] {subprocess.py:93} INFO - [0m02:38:05  1 of 3 OK created sql table model raw_analytics.stock_moving_averages .......... [[32mSUCCESS 1[0m in 1.39s]
+[2025-11-25T02:38:05.284+0000] {subprocess.py:93} INFO - [0m02:38:05  2 of 3 OK created sql table model raw_analytics.stock_rsi ...................... [[32mSUCCESS 1[0m in 1.43s]
+[2025-11-25T02:38:05.287+0000] {subprocess.py:93} INFO - [0m02:38:05  3 of 3 START sql table model raw_analytics.stock_technical_indicators .......... [RUN]
+[2025-11-25T02:38:06.822+0000] {subprocess.py:93} INFO - [0m02:38:06  3 of 3 OK created sql table model raw_analytics.stock_technical_indicators ..... [[32mSUCCESS 1[0m in 1.53s]
+[2025-11-25T02:38:06.830+0000] {subprocess.py:93} INFO - [0m02:38:06
+[2025-11-25T02:38:06.830+0000] {subprocess.py:93} INFO - [0m02:38:06  Finished running 3 table models in 0 hours 0 minutes and 4.51 seconds (4.51s).
+[2025-11-25T02:38:06.843+0000] {subprocess.py:93} INFO - [0m02:38:06
+[2025-11-25T02:38:06.843+0000] {subprocess.py:93} INFO - [0m02:38:06  [32mCompleted successfully[0m
+[2025-11-25T02:38:06.844+0000] {subprocess.py:93} INFO - [0m02:38:06
+[2025-11-25T02:38:06.844+0000] {subprocess.py:93} INFO - [0m02:38:06  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[2025-11-25T02:38:07.382+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-25T02:38:07.391+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-25T02:38:07.391+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=stock_elt_with_dbt, task_id=dbt_transformations.dbt_run_core, run_id=manual__2025-11-25T02:37:37+00:00, execution_date=20251125T023737, start_date=20251125T023800, end_date=20251125T023807
+[2025-11-25T02:38:07.427+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-25T02:38:07.434+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-25T02:38:07.435+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

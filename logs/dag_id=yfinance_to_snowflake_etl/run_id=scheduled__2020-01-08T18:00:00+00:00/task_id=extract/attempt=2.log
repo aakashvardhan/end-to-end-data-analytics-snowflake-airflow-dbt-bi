@@ -1,0 +1,34 @@
+[2025-11-25T00:40:27.217+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-25T00:40:27.224+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2020-01-08T18:00:00+00:00 [queued]>
+[2025-11-25T00:40:27.228+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2020-01-08T18:00:00+00:00 [queued]>
+[2025-11-25T00:40:27.228+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2025-11-25T00:40:27.233+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): extract> on 2020-01-08 18:00:00+00:00
+[2025-11-25T00:40:27.239+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'yfinance_to_snowflake_etl', 'extract', 'scheduled__2020-01-08T18:00:00+00:00', '--job-id', '3815', '--raw', '--subdir', 'DAGS_FOLDER/yfinance_to_snowflake_etl.py', '--cfg-path', '/tmp/tmpyd3t81fk']
+[2025-11-25T00:40:27.241+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=74938) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-25T00:40:27.242+0000] {standard_task_runner.py:72} INFO - Started process 75009 to run task
+[2025-11-25T00:40:27.241+0000] {standard_task_runner.py:105} INFO - Job 3815: Subtask extract
+[2025-11-25T00:40:27.285+0000] {task_command.py:467} INFO - Running <TaskInstance: yfinance_to_snowflake_etl.extract scheduled__2020-01-08T18:00:00+00:00 [running]> on host fd57ff944215
+[2025-11-25T00:40:27.330+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='yfinance_to_snowflake_etl' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2020-01-08T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2020-01-08T18:00:00+00:00'
+[2025-11-25T00:40:27.331+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-25T00:40:27.332+0000] {logging_mixin.py:190} INFO - Starting extraction for symbols: ['AAPL', 'TSLA']
+[2025-11-25T00:40:27.334+0000] {logging_mixin.py:190} INFO - Period: "180d", Interval: "1d"
+[2025-11-25T00:40:27.336+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:44 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:40:27.749+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:40:27.749+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:40:27.749+0000] {multi.py:198} ERROR - ['AAPL']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-25T00:40:27.753+0000] {logging_mixin.py:190} INFO - No data available for symbol AAPL
+[2025-11-25T00:40:27.753+0000] {logging_mixin.py:190} INFO - Skipping AAPL - no data returned
+[2025-11-25T00:40:27.754+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/yfinance_to_snowflake_etl.py:44 FutureWarning: YF.download() has changed argument auto_adjust default to True
+[2025-11-25T00:40:28.030+0000] {logging_mixin.py:190} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-11-25T00:40:28.030+0000] {multi.py:185} ERROR - 
+1 Failed download:
+[2025-11-25T00:40:28.031+0000] {multi.py:198} ERROR - ['TSLA']: YFPricesMissingError('possibly delisted; no price data found  (period="180d") (Yahoo error = "Invalid input - interval="1d" is not supported. Valid intervals: [1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 4h, 1d, 5d, 1wk, 1mo, 3mo]")')
+[2025-11-25T00:40:28.032+0000] {logging_mixin.py:190} INFO - No data available for symbol TSLA
+[2025-11-25T00:40:28.033+0000] {logging_mixin.py:190} INFO - Skipping TSLA - no data returned
+[2025-11-25T00:40:28.033+0000] {logging_mixin.py:190} INFO - Total records extracted: 0
+[2025-11-25T00:40:28.034+0000] {python.py:240} INFO - Done. Returned value was: []
+[2025-11-25T00:40:28.043+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-25T00:40:28.044+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=yfinance_to_snowflake_etl, task_id=extract, run_id=scheduled__2020-01-08T18:00:00+00:00, execution_date=20200108T180000, start_date=20251125T004027, end_date=20251125T004028
+[2025-11-25T00:40:28.080+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-25T00:40:28.084+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

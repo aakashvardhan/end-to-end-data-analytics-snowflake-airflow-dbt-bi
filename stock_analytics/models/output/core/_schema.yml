@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: stock_moving_averages
+    description: Stock prices with simple and exponential moving averages
+    columns:
+      - name: symbol
+        description: Stock ticker symbol
+      - name: date
+        description: Trading date
+      - name: sma_7
+        description: 7-day simple moving average
+      - name: sma_20
+        description: 20-day simple moving average
+      - name: sma_50
+        description: 50-day simple moving average
+      - name: sma_200
+        description: 200-day simple moving average
+      - name: macd
+        description: Moving Average Convergence Divergence
+
+  - name: stock_rsi
+    description: Relative Strength Index (RSI) for stock momentum analysis
+    columns:
+      - name: symbol
+        description: Stock ticker symbol
+      - name: date
+        description: Trading date
+      - name: rsi_14
+        description: 14-period Relative Strength Index
+      - name: rsi_signal
+        description: RSI signal (Overbought/Oversold/Neutral)
+
+  - name: stock_technical_indicators
+    description: Comprehensive technical analysis with all indicators combined
+    columns:
+      - name: symbol
+        description: Stock ticker symbol
+      - name: date
+        description: Trading date
+      - name: close
+        description: Closing price
+      - name: trend_signal
+        description: Trend signal based on moving averages
+      - name: volume_signal
+        description: Volume analysis signal

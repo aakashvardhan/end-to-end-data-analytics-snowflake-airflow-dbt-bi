@@ -1,0 +1,43 @@
+[2025-11-25T20:35:44.263+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-25T20:35:44.269+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_test manual__2025-11-25T02:28:16.718638+00:00 [queued]>
+[2025-11-25T20:35:44.273+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_test manual__2025-11-25T02:28:16.718638+00:00 [queued]>
+[2025-11-25T20:35:44.273+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-11-25T20:35:44.278+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_transformations.dbt_test> on 2025-11-25 02:28:16.718638+00:00
+[2025-11-25T20:35:44.283+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=21254) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-25T20:35:44.284+0000] {standard_task_runner.py:72} INFO - Started process 21262 to run task
+[2025-11-25T20:35:44.283+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'stock_elt_with_dbt', 'dbt_transformations.dbt_test', 'manual__2025-11-25T02:28:16.718638+00:00', '--job-id', '4944', '--raw', '--subdir', 'DAGS_FOLDER/stock_elt_with_dbt.py', '--cfg-path', '/tmp/tmp7qrftw74']
+[2025-11-25T20:35:44.284+0000] {standard_task_runner.py:105} INFO - Job 4944: Subtask dbt_transformations.dbt_test
+[2025-11-25T20:35:44.302+0000] {task_command.py:467} INFO - Running <TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_test manual__2025-11-25T02:28:16.718638+00:00 [running]> on host a4b8d4f4105c
+[2025-11-25T20:35:44.331+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_elt_with_dbt' AIRFLOW_CTX_TASK_ID='dbt_transformations.dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-11-25T02:28:16.718638+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-25T02:28:16.718638+00:00'
+[2025-11-25T20:35:44.332+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-25T20:35:44.333+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-25T20:35:44.333+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/stock_analytics && dbt test --profiles-dir .']
+[2025-11-25T20:35:44.338+0000] {subprocess.py:86} INFO - Output:
+[2025-11-25T20:35:45.611+0000] {subprocess.py:93} INFO - [0m20:35:45  Running with dbt=1.7.0
+[2025-11-25T20:35:45.989+0000] {subprocess.py:93} INFO - [0m20:35:45  Registered adapter: snowflake=1.7.0
+[2025-11-25T20:35:46.016+0000] {subprocess.py:93} INFO - [0m20:35:46  Found 6 models, 5 tests, 2 snapshots, 1 source, 0 exposures, 0 metrics, 470 macros, 0 groups, 0 semantic models
+[2025-11-25T20:35:46.018+0000] {subprocess.py:93} INFO - [0m20:35:46
+[2025-11-25T20:35:47.241+0000] {subprocess.py:93} INFO - [0m20:35:47  Concurrency: 4 threads (target='dev')
+[2025-11-25T20:35:47.241+0000] {subprocess.py:93} INFO - [0m20:35:47
+[2025-11-25T20:35:47.246+0000] {subprocess.py:93} INFO - [0m20:35:47  1 of 5 START test not_null_stg_stock_prices_close .............................. [RUN]
+[2025-11-25T20:35:47.247+0000] {subprocess.py:93} INFO - [0m20:35:47  2 of 5 START test not_null_stg_stock_prices_date ............................... [RUN]
+[2025-11-25T20:35:47.247+0000] {subprocess.py:93} INFO - [0m20:35:47  3 of 5 START test not_null_stg_stock_prices_symbol ............................. [RUN]
+[2025-11-25T20:35:47.248+0000] {subprocess.py:93} INFO - [0m20:35:47  4 of 5 START test source_not_null_raw_data_stock_price_yfinance_date ........... [RUN]
+[2025-11-25T20:35:47.984+0000] {subprocess.py:93} INFO - [0m20:35:47  1 of 5 PASS not_null_stg_stock_prices_close .................................... [[32mPASS[0m in 0.74s]
+[2025-11-25T20:35:47.985+0000] {subprocess.py:93} INFO - [0m20:35:47  5 of 5 START test source_not_null_raw_data_stock_price_yfinance_symbol ......... [RUN]
+[2025-11-25T20:35:47.995+0000] {subprocess.py:93} INFO - [0m20:35:47  2 of 5 PASS not_null_stg_stock_prices_date ..................................... [[32mPASS[0m in 0.75s]
+[2025-11-25T20:35:48.004+0000] {subprocess.py:93} INFO - [0m20:35:48  4 of 5 PASS source_not_null_raw_data_stock_price_yfinance_date ................. [[32mPASS[0m in 0.75s]
+[2025-11-25T20:35:48.014+0000] {subprocess.py:93} INFO - [0m20:35:48  3 of 5 PASS not_null_stg_stock_prices_symbol ................................... [[32mPASS[0m in 0.77s]
+[2025-11-25T20:35:48.737+0000] {subprocess.py:93} INFO - [0m20:35:48  5 of 5 PASS source_not_null_raw_data_stock_price_yfinance_symbol ............... [[32mPASS[0m in 0.75s]
+[2025-11-25T20:35:48.741+0000] {subprocess.py:93} INFO - [0m20:35:48
+[2025-11-25T20:35:48.741+0000] {subprocess.py:93} INFO - [0m20:35:48  Finished running 5 tests in 0 hours 0 minutes and 2.72 seconds (2.72s).
+[2025-11-25T20:35:48.747+0000] {subprocess.py:93} INFO - [0m20:35:48
+[2025-11-25T20:35:48.748+0000] {subprocess.py:93} INFO - [0m20:35:48  [32mCompleted successfully[0m
+[2025-11-25T20:35:48.749+0000] {subprocess.py:93} INFO - [0m20:35:48
+[2025-11-25T20:35:48.750+0000] {subprocess.py:93} INFO - [0m20:35:48  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[2025-11-25T20:35:49.401+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-25T20:35:49.412+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-25T20:35:49.412+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=stock_elt_with_dbt, task_id=dbt_transformations.dbt_test, run_id=manual__2025-11-25T02:28:16.718638+00:00, execution_date=20251125T022816, start_date=20251125T203544, end_date=20251125T203549
+[2025-11-25T20:35:49.535+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-25T20:35:49.540+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-25T20:35:49.541+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

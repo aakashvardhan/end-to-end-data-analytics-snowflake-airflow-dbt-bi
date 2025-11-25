@@ -8,16 +8,9 @@ from datetime import datetime
 import yfinance as yf
 import pandas as pd
 import time
-import json
 
 # --- Snowflake connection parameters from Airflow Variables ---
-USER_ID = Variable.get("snowflake_userid")
-PASSWORD = Variable.get("snowflake_password")
-ACCOUNT = Variable.get("snowflake_account")
-WAREHOUSE = Variable.get("snowflake_warehouse")
 DATABASE = Variable.get("snowflake_database")
-ROLE = Variable.get("snowflake_role")
-RAW_SCHEMA = Variable.get("snowflake_schema")
 
 
 
@@ -139,8 +132,10 @@ def load_many(records, con):
         """, records)
         
         cursor.execute("COMMIT;")
+        print(f"Successfully loaded {len(records)} records to {target_table}")
     except Exception as e:
         cursor.execute("ROLLBACK;")
+        print(f"Failed to load data: {e}")
         raise e
 
 with DAG(
@@ -148,7 +143,7 @@ with DAG(
     start_date=datetime(2025, 11, 20),
     tags=["ETL"],
     catchup=False,
-    schedule="0 18 * * 1-5",
+    schedule="0 18 * * 1-5",  # Run weekdays at 6:00 PM
 ) as dag:
 
     raw_symbols = Variable.get("yfinance_symbols")  # "AAPL,TSLA"

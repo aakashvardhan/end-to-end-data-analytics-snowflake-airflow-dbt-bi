@@ -3197,3 +3197,12 @@ File Path                                       PID    Runtime      # DAGs    # 
 /opt/airflow/dags/stock_elt_with_dbt.py                                  1           0  2.79s           2025-11-25T02:52:40                      45
 /opt/airflow/dags/yfinance_to_snowflake_etl.py                           1           0  2.77s           2025-11-25T02:52:41                      45
 ================================================================================
+[2025-11-25T02:53:27.657+0000] {manager.py:1008} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                       PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+----------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/stock_elt_with_dbt.py                                  1           0  2.88s           2025-11-25T02:53:13                      45
+/opt/airflow/dags/yfinance_to_snowflake_etl.py                           1           0  2.80s           2025-11-25T02:53:14                      45
+================================================================================

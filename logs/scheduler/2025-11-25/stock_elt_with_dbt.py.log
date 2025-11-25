@@ -1357,3 +1357,23 @@ ImportError: cannot import name 'get_proxy_url' from 'snowflake.connector.proxy'
 [2025-11-25T02:52:40.399+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:52:40.399+0000] {dag.py:3229} INFO - Sync 1 DAGs
 [2025-11-25T02:52:40.406+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:52:40.406+0000] {dag.py:4156} INFO - Setting next_dagrun for stock_elt_with_dbt to 2025-11-24 18:00:00+00:00, run_after=2025-11-25 18:00:00+00:00
 [2025-11-25T02:52:40.413+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/stock_elt_with_dbt.py took 2.772 seconds
+[2025-11-25T02:53:10.715+0000] {processor.py:186} INFO - Started process (PID=1352) to work on /opt/airflow/dags/stock_elt_with_dbt.py
+[2025-11-25T02:53:10.716+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/stock_elt_with_dbt.py for tasks to queue
+[2025-11-25T02:53:10.718+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:10.718+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/stock_elt_with_dbt.py
+[2025-11-25T02:53:10.949+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:10.949+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-11-25T02:53:10.949+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:10.949+0000] {connection.py:521} INFO - Snowflake Connector for Python Version: 3.18.0, Python Version: 3.12.5, Platform: Linux-6.10.14-linuxkit-aarch64-with-glibc2.36
+[2025-11-25T02:53:10.950+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:10.950+0000] {connection.py:1464} INFO - Connecting to GLOBAL Snowflake domain
+[2025-11-25T02:53:13.508+0000] {processor.py:925} INFO - DAG(s) 'stock_elt_with_dbt' retrieved from /opt/airflow/dags/stock_elt_with_dbt.py
+[2025-11-25T02:53:13.556+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:13.556+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-11-25T02:53:13.564+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:13.564+0000] {dag.py:4156} INFO - Setting next_dagrun for stock_elt_with_dbt to 2025-11-24 18:00:00+00:00, run_after=2025-11-25 18:00:00+00:00
+[2025-11-25T02:53:13.570+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/stock_elt_with_dbt.py took 2.860 seconds
+[2025-11-25T02:53:43.607+0000] {processor.py:186} INFO - Started process (PID=1380) to work on /opt/airflow/dags/stock_elt_with_dbt.py
+[2025-11-25T02:53:43.608+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/stock_elt_with_dbt.py for tasks to queue
+[2025-11-25T02:53:43.610+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:43.610+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/stock_elt_with_dbt.py
+[2025-11-25T02:53:43.824+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:43.824+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-11-25T02:53:43.825+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:43.825+0000] {connection.py:521} INFO - Snowflake Connector for Python Version: 3.18.0, Python Version: 3.12.5, Platform: Linux-6.10.14-linuxkit-aarch64-with-glibc2.36
+[2025-11-25T02:53:43.825+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:43.825+0000] {connection.py:1464} INFO - Connecting to GLOBAL Snowflake domain
+[2025-11-25T02:53:46.407+0000] {processor.py:925} INFO - DAG(s) 'stock_elt_with_dbt' retrieved from /opt/airflow/dags/stock_elt_with_dbt.py
+[2025-11-25T02:53:46.456+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:46.456+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-11-25T02:53:46.464+0000] {logging_mixin.py:190} INFO - [2025-11-25T02:53:46.464+0000] {dag.py:4156} INFO - Setting next_dagrun for stock_elt_with_dbt to 2025-11-24 18:00:00+00:00, run_after=2025-11-25 18:00:00+00:00
+[2025-11-25T02:53:46.470+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/stock_elt_with_dbt.py took 2.868 seconds

@@ -1,0 +1,48 @@
+version: 2
+
+snapshots:
+  - name: stock_prices_snapshot
+    description: |
+      Historical snapshot of stock prices tracking changes over time.
+      Uses check strategy to detect changes in close, volume, high, and low values.
+      This allows us to see how stock data may have been corrected or adjusted over time.
+    columns:
+      - name: symbol
+        description: Stock ticker symbol
+      - name: date
+        description: Trading date
+      - name: close
+        description: Closing price (tracked for changes)
+      - name: volume
+        description: Trading volume (tracked for changes)
+      - name: dbt_scd_id
+        description: Unique identifier for each snapshot record
+      - name: dbt_updated_at
+        description: Timestamp when this record was last updated
+      - name: dbt_valid_from
+        description: Timestamp when this version became valid
+      - name: dbt_valid_to
+        description: Timestamp when this version became invalid (NULL if current)
+
+  - name: rsi_signals_snapshot
+    description: |
+      Historical snapshot of RSI overbought/oversold signals.
+      Tracks when stocks enter and exit overbought (RSI > 70) or oversold (RSI < 30) conditions.
+      Useful for analyzing trading signal performance over time.
+    columns:
+      - name: symbol
+        description: Stock ticker symbol
+      - name: date
+        description: Trading date
+      - name: rsi_14
+        description: 14-period RSI value (tracked for changes)
+      - name: rsi_signal
+        description: Signal classification (Overbought/Oversold, tracked for changes)
+      - name: dbt_scd_id
+        description: Unique identifier for each snapshot record
+      - name: dbt_updated_at
+        description: Timestamp when this record was last updated
+      - name: dbt_valid_from
+        description: Timestamp when this version became valid
+      - name: dbt_valid_to
+        description: Timestamp when this version became invalid (NULL if current)

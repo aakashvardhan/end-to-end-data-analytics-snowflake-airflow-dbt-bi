@@ -1,0 +1,113 @@
+[2025-11-25T07:28:24.859+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-25T07:28:24.865+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_snapshot manual__2025-11-25T02:28:16.718638+00:00 [queued]>
+[2025-11-25T07:28:24.867+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_snapshot manual__2025-11-25T02:28:16.718638+00:00 [queued]>
+[2025-11-25T07:28:24.867+0000] {taskinstance.py:2865} INFO - Starting attempt 3 of 4
+[2025-11-25T07:28:24.871+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_transformations.dbt_snapshot> on 2025-11-25 02:28:16.718638+00:00
+[2025-11-25T07:28:24.875+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=9176) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-25T07:28:24.875+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'stock_elt_with_dbt', 'dbt_transformations.dbt_snapshot', 'manual__2025-11-25T02:28:16.718638+00:00', '--job-id', '4872', '--raw', '--subdir', 'DAGS_FOLDER/stock_elt_with_dbt.py', '--cfg-path', '/tmp/tmp4c6uy6pm']
+[2025-11-25T07:28:24.876+0000] {standard_task_runner.py:72} INFO - Started process 9200 to run task
+[2025-11-25T07:28:24.876+0000] {standard_task_runner.py:105} INFO - Job 4872: Subtask dbt_transformations.dbt_snapshot
+[2025-11-25T07:28:24.892+0000] {task_command.py:467} INFO - Running <TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_snapshot manual__2025-11-25T02:28:16.718638+00:00 [running]> on host a4b8d4f4105c
+[2025-11-25T07:28:24.919+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_elt_with_dbt' AIRFLOW_CTX_TASK_ID='dbt_transformations.dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-11-25T02:28:16.718638+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-25T02:28:16.718638+00:00'
+[2025-11-25T07:28:24.920+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-25T07:28:24.921+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-25T07:28:24.921+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/stock_analytics && dbt snapshot --profiles-dir .']
+[2025-11-25T07:28:24.926+0000] {subprocess.py:86} INFO - Output:
+[2025-11-25T07:28:26.054+0000] {subprocess.py:93} INFO - [0m07:28:26  Running with dbt=1.7.0
+[2025-11-25T07:28:26.414+0000] {subprocess.py:93} INFO - [0m07:28:26  Registered adapter: snowflake=1.7.0
+[2025-11-25T07:28:26.447+0000] {subprocess.py:93} INFO - [0m07:28:26  Found 6 models, 5 tests, 2 snapshots, 1 source, 0 exposures, 0 metrics, 470 macros, 0 groups, 0 semantic models
+[2025-11-25T07:28:26.448+0000] {subprocess.py:93} INFO - [0m07:28:26
+[2025-11-25T07:28:27.766+0000] {subprocess.py:93} INFO - [0m07:28:27  Concurrency: 4 threads (target='dev')
+[2025-11-25T07:28:27.766+0000] {subprocess.py:93} INFO - [0m07:28:27
+[2025-11-25T07:28:27.773+0000] {subprocess.py:93} INFO - [0m07:28:27  1 of 2 START snapshot snapshots.rsi_signals_snapshot ........................... [RUN]
+[2025-11-25T07:28:27.774+0000] {subprocess.py:93} INFO - [0m07:28:27  2 of 2 START snapshot snapshots.stock_prices_snapshot .......................... [RUN]
+[2025-11-25T07:28:30.885+0000] {subprocess.py:93} INFO - [0m07:28:30  1 of 2 ERROR snapshotting snapshots.rsi_signals_snapshot ....................... [[31mERROR[0m in 3.11s]
+[2025-11-25T07:28:31.573+0000] {subprocess.py:93} INFO - [0m07:28:31  2 of 2 ERROR snapshotting snapshots.stock_prices_snapshot ...................... [[31mERROR[0m in 3.80s]
+[2025-11-25T07:28:31.578+0000] {subprocess.py:93} INFO - [0m07:28:31
+[2025-11-25T07:28:31.578+0000] {subprocess.py:93} INFO - [0m07:28:31  Finished running 2 snapshots in 0 hours 0 minutes and 5.13 seconds (5.13s).
+[2025-11-25T07:28:31.587+0000] {subprocess.py:93} INFO - [0m07:28:31
+[2025-11-25T07:28:31.588+0000] {subprocess.py:93} INFO - [0m07:28:31  [31mCompleted with 2 errors and 0 warnings:[0m
+[2025-11-25T07:28:31.588+0000] {subprocess.py:93} INFO - [0m07:28:31
+[2025-11-25T07:28:31.588+0000] {subprocess.py:93} INFO - [0m07:28:31    Database Error in snapshot rsi_signals_snapshot (snapshots/rsi_signals_snapshot.sql)
+[2025-11-25T07:28:31.589+0000] {subprocess.py:93} INFO -   100090 (42P18): Duplicate row detected during DML action
+[2025-11-25T07:28:31.589+0000] {subprocess.py:93} INFO -   Row Values: [redacted]
+[2025-11-25T07:28:31.589+0000] {subprocess.py:93} INFO -   compiled Code at target/run/stock_analytics/snapshots/rsi_signals_snapshot.sql
+[2025-11-25T07:28:31.590+0000] {subprocess.py:93} INFO - [0m07:28:31
+[2025-11-25T07:28:31.590+0000] {subprocess.py:93} INFO - [0m07:28:31    Database Error in snapshot stock_prices_snapshot (snapshots/stock_prices_snapshot.sql)
+[2025-11-25T07:28:31.590+0000] {subprocess.py:93} INFO -   100090 (42P18): Duplicate row detected during DML action
+[2025-11-25T07:28:31.590+0000] {subprocess.py:93} INFO -   Row Values: [redacted]
+[2025-11-25T07:28:31.590+0000] {subprocess.py:93} INFO -   compiled Code at target/run/stock_analytics/snapshots/stock_prices_snapshot.sql
+[2025-11-25T07:28:31.591+0000] {subprocess.py:93} INFO - [0m07:28:31
+[2025-11-25T07:28:31.591+0000] {subprocess.py:93} INFO - [0m07:28:31  Done. PASS=0 WARN=0 ERROR=2 SKIP=0 TOTAL=2
+[2025-11-25T07:28:32.246+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-25T07:28:32.252+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-25T07:28:32.255+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_elt_with_dbt, task_id=dbt_transformations.dbt_snapshot, run_id=manual__2025-11-25T02:28:16.718638+00:00, execution_date=20251125T022816, start_date=20251125T072824, end_date=20251125T072832
+[2025-11-25T07:28:32.261+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-25T07:28:32.261+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 4872 for task dbt_transformations.dbt_snapshot (Bash command failed. The command returned a non-zero exit code 1.; 9200)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-25T07:28:32.303+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-11-25T07:28:32.312+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-25T07:28:32.313+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

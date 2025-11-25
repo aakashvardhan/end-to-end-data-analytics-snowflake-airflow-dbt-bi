@@ -188,6 +188,12 @@ with DAG(
             bash_command=f"cd {DBT_PROJECT_DIR} && dbt run --profiles-dir . --select output.core.*",
         )
         
+        # Run dbt snapshots (capture historical changes)
+        dbt_snapshot = BashOperator(
+            task_id="dbt_snapshot",
+            bash_command=f"cd {DBT_PROJECT_DIR} && dbt snapshot --profiles-dir .",
+        )
+        
         # Test dbt models
         dbt_test = BashOperator(
             task_id="dbt_test",
@@ -195,7 +201,7 @@ with DAG(
         )
         
         # Define task dependencies within dbt group
-        dbt_deps >> dbt_debug >> dbt_run_staging >> dbt_run_core >> dbt_test
+        dbt_deps >> dbt_debug >> dbt_run_staging >> dbt_run_core >> dbt_snapshot >> dbt_test
     
     # Overall DAG dependencies
     extracted_data >> load_task >> dbt_group

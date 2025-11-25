@@ -1,0 +1,37 @@
+[2025-11-25T07:05:10.795+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-25T07:05:10.802+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_snapshot manual__2025-11-25T07:04:34+00:00 [queued]>
+[2025-11-25T07:05:10.810+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_snapshot manual__2025-11-25T07:04:34+00:00 [queued]>
+[2025-11-25T07:05:10.810+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-11-25T07:05:10.822+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_transformations.dbt_snapshot> on 2025-11-25 07:04:34+00:00
+[2025-11-25T07:05:10.827+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=7215) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-25T07:05:10.828+0000] {standard_task_runner.py:72} INFO - Started process 7223 to run task
+[2025-11-25T07:05:10.828+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'stock_elt_with_dbt', 'dbt_transformations.dbt_snapshot', 'manual__2025-11-25T07:04:34+00:00', '--job-id', '4855', '--raw', '--subdir', 'DAGS_FOLDER/stock_elt_with_dbt.py', '--cfg-path', '/tmp/tmptf05h4_6']
+[2025-11-25T07:05:10.829+0000] {standard_task_runner.py:105} INFO - Job 4855: Subtask dbt_transformations.dbt_snapshot
+[2025-11-25T07:05:10.849+0000] {task_command.py:467} INFO - Running <TaskInstance: stock_elt_with_dbt.dbt_transformations.dbt_snapshot manual__2025-11-25T07:04:34+00:00 [running]> on host a4b8d4f4105c
+[2025-11-25T07:05:10.878+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_elt_with_dbt' AIRFLOW_CTX_TASK_ID='dbt_transformations.dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-11-25T07:04:34+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-25T07:04:34+00:00'
+[2025-11-25T07:05:10.879+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-25T07:05:10.880+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-25T07:05:10.880+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/stock_analytics && dbt snapshot --profiles-dir .']
+[2025-11-25T07:05:10.885+0000] {subprocess.py:86} INFO - Output:
+[2025-11-25T07:05:11.950+0000] {subprocess.py:93} INFO - [0m07:05:11  Running with dbt=1.7.0
+[2025-11-25T07:05:12.270+0000] {subprocess.py:93} INFO - [0m07:05:12  Registered adapter: snowflake=1.7.0
+[2025-11-25T07:05:12.300+0000] {subprocess.py:93} INFO - [0m07:05:12  Found 6 models, 5 tests, 2 snapshots, 1 source, 0 exposures, 0 metrics, 470 macros, 0 groups, 0 semantic models
+[2025-11-25T07:05:12.301+0000] {subprocess.py:93} INFO - [0m07:05:12
+[2025-11-25T07:05:13.662+0000] {subprocess.py:93} INFO - [0m07:05:13  Concurrency: 4 threads (target='dev')
+[2025-11-25T07:05:13.663+0000] {subprocess.py:93} INFO - [0m07:05:13
+[2025-11-25T07:05:13.669+0000] {subprocess.py:93} INFO - [0m07:05:13  1 of 2 START snapshot snapshots.rsi_signals_snapshot ........................... [RUN]
+[2025-11-25T07:05:13.669+0000] {subprocess.py:93} INFO - [0m07:05:13  2 of 2 START snapshot snapshots.stock_prices_snapshot .......................... [RUN]
+[2025-11-25T07:05:17.897+0000] {subprocess.py:93} INFO - [0m07:05:17  1 of 2 OK snapshotted snapshots.rsi_signals_snapshot ........................... [[32mSUCCESS 40[0m in 4.23s]
+[2025-11-25T07:05:18.302+0000] {subprocess.py:93} INFO - [0m07:05:18  2 of 2 OK snapshotted snapshots.stock_prices_snapshot .......................... [[32mSUCCESS 90[0m in 4.63s]
+[2025-11-25T07:05:18.308+0000] {subprocess.py:93} INFO - [0m07:05:18
+[2025-11-25T07:05:18.308+0000] {subprocess.py:93} INFO - [0m07:05:18  Finished running 2 snapshots in 0 hours 0 minutes and 6.01 seconds (6.01s).
+[2025-11-25T07:05:18.319+0000] {subprocess.py:93} INFO - [0m07:05:18
+[2025-11-25T07:05:18.319+0000] {subprocess.py:93} INFO - [0m07:05:18  [32mCompleted successfully[0m
+[2025-11-25T07:05:18.320+0000] {subprocess.py:93} INFO - [0m07:05:18
+[2025-11-25T07:05:18.320+0000] {subprocess.py:93} INFO - [0m07:05:18  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[2025-11-25T07:05:19.040+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-25T07:05:19.050+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-25T07:05:19.050+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=stock_elt_with_dbt, task_id=dbt_transformations.dbt_snapshot, run_id=manual__2025-11-25T07:04:34+00:00, execution_date=20251125T070434, start_date=20251125T070510, end_date=20251125T070519
+[2025-11-25T07:05:19.101+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-25T07:05:19.110+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-25T07:05:19.110+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

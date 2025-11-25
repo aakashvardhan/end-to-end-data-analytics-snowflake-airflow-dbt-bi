@@ -11421,3 +11421,43 @@ snowflake.connector.errors.OperationalError: 250001: 250001: Could not connect t
 [2025-11-25T22:28:03.418+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:28:03.418+0000] {dag.py:3229} INFO - Sync 1 DAGs
 [2025-11-25T22:28:03.426+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:28:03.426+0000] {dag.py:4156} INFO - Setting next_dagrun for yfinance_to_snowflake_etl to 2025-11-25 18:00:00+00:00, run_after=2025-11-26 18:00:00+00:00
 [2025-11-25T22:28:03.432+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/yfinance_to_snowflake_etl.py took 3.397 seconds
+[2025-11-25T22:28:33.746+0000] {processor.py:186} INFO - Started process (PID=26676) to work on /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:28:33.749+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/yfinance_to_snowflake_etl.py for tasks to queue
+[2025-11-25T22:28:33.749+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:28:33.749+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:28:33.906+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:28:33.906+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-11-25T22:28:33.906+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:28:33.906+0000] {connection.py:521} INFO - Snowflake Connector for Python Version: 3.18.0, Python Version: 3.12.5, Platform: Linux-6.10.14-linuxkit-aarch64-with-glibc2.36
+[2025-11-25T22:28:33.907+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:28:33.907+0000] {connection.py:1464} INFO - Connecting to GLOBAL Snowflake domain
+[2025-11-25T22:28:35.404+0000] {processor.py:925} INFO - DAG(s) 'yfinance_to_snowflake_etl' retrieved from /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:28:35.530+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:28:35.530+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-11-25T22:28:35.537+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:28:35.537+0000] {dag.py:4156} INFO - Setting next_dagrun for yfinance_to_snowflake_etl to 2025-11-25 18:00:00+00:00, run_after=2025-11-26 18:00:00+00:00
+[2025-11-25T22:28:35.543+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/yfinance_to_snowflake_etl.py took 1.799 seconds
+[2025-11-25T22:29:05.872+0000] {processor.py:186} INFO - Started process (PID=26704) to work on /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:29:05.877+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/yfinance_to_snowflake_etl.py for tasks to queue
+[2025-11-25T22:29:05.878+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:05.878+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:29:06.017+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:06.017+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-11-25T22:29:06.017+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:06.017+0000] {connection.py:521} INFO - Snowflake Connector for Python Version: 3.18.0, Python Version: 3.12.5, Platform: Linux-6.10.14-linuxkit-aarch64-with-glibc2.36
+[2025-11-25T22:29:06.017+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:06.017+0000] {connection.py:1464} INFO - Connecting to GLOBAL Snowflake domain
+[2025-11-25T22:29:08.620+0000] {processor.py:925} INFO - DAG(s) 'yfinance_to_snowflake_etl' retrieved from /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:29:08.665+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:08.665+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-11-25T22:29:08.673+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:08.673+0000] {dag.py:4156} INFO - Setting next_dagrun for yfinance_to_snowflake_etl to 2025-11-25 18:00:00+00:00, run_after=2025-11-26 18:00:00+00:00
+[2025-11-25T22:29:08.679+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/yfinance_to_snowflake_etl.py took 2.812 seconds
+[2025-11-25T22:29:38.939+0000] {processor.py:186} INFO - Started process (PID=26732) to work on /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:29:38.944+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/yfinance_to_snowflake_etl.py for tasks to queue
+[2025-11-25T22:29:38.944+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:38.944+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:29:39.128+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:39.128+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-11-25T22:29:39.128+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:39.128+0000] {connection.py:521} INFO - Snowflake Connector for Python Version: 3.18.0, Python Version: 3.12.5, Platform: Linux-6.10.14-linuxkit-aarch64-with-glibc2.36
+[2025-11-25T22:29:39.129+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:39.129+0000] {connection.py:1464} INFO - Connecting to GLOBAL Snowflake domain
+[2025-11-25T22:29:41.707+0000] {processor.py:925} INFO - DAG(s) 'yfinance_to_snowflake_etl' retrieved from /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:29:41.755+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:41.755+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-11-25T22:29:41.763+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:29:41.763+0000] {dag.py:4156} INFO - Setting next_dagrun for yfinance_to_snowflake_etl to 2025-11-25 18:00:00+00:00, run_after=2025-11-26 18:00:00+00:00
+[2025-11-25T22:29:41.769+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/yfinance_to_snowflake_etl.py took 2.835 seconds
+[2025-11-25T22:30:12.080+0000] {processor.py:186} INFO - Started process (PID=26760) to work on /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:30:12.083+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/yfinance_to_snowflake_etl.py for tasks to queue
+[2025-11-25T22:30:12.083+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:30:12.083+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:30:12.274+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:30:12.274+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2025-11-25T22:30:12.275+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:30:12.275+0000] {connection.py:521} INFO - Snowflake Connector for Python Version: 3.18.0, Python Version: 3.12.5, Platform: Linux-6.10.14-linuxkit-aarch64-with-glibc2.36
+[2025-11-25T22:30:12.275+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:30:12.275+0000] {connection.py:1464} INFO - Connecting to GLOBAL Snowflake domain
+[2025-11-25T22:30:14.883+0000] {processor.py:925} INFO - DAG(s) 'yfinance_to_snowflake_etl' retrieved from /opt/airflow/dags/yfinance_to_snowflake_etl.py
+[2025-11-25T22:30:14.932+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:30:14.932+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-11-25T22:30:14.939+0000] {logging_mixin.py:190} INFO - [2025-11-25T22:30:14.939+0000] {dag.py:4156} INFO - Setting next_dagrun for yfinance_to_snowflake_etl to 2025-11-25 18:00:00+00:00, run_after=2025-11-26 18:00:00+00:00
+[2025-11-25T22:30:14.946+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/yfinance_to_snowflake_etl.py took 2.870 seconds

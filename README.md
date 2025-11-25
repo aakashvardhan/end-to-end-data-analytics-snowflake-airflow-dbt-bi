@@ -11,8 +11,7 @@ A production-ready **ELT (Extract, Load, Transform)** pipeline for real-time sto
 
 ## 📊 System Architecture
 
-<!-- TODO: Add system architecture diagram here -->
-**[Architecture Diagram Placeholder]**
+![scr](https://github.com/aakashvardhan/end-to-end-data-analytics-snowflake-airflow-dbt-bi/blob/main/Screenshot%202025-11-25%20at%202.30.03%E2%80%AFPM.png)
 
 *The diagram should illustrate:*
 - Data flow from yfinance API → Airflow → Snowflake (Raw Layer)
